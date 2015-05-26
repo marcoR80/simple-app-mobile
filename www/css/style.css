@@ -11,6 +11,7 @@ body{
 .ilike-blue-container {
     @extend .blue, .lighten-4;
     background: cornsilk;
+    height: 100%;
 }
 
 .title{
