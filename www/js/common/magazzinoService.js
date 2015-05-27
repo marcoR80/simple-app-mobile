@@ -2,9 +2,14 @@ angular.module("app")
 .factory("MagazzinoService", function($log, $window, $firebaseArray){
 
   var ref = new Firebase("https://vivid-torch-1065.firebaseio.com/magazzino");
-   var prodotti = $firebaseArray(ref);
+  var prodotti = $firebaseArray(ref);
 
-     $log.debug("prodotti:"+prodotti);
+
+  var categoriaRef = new Firebase("https://vivid-torch-1065.firebaseio.com/sezioni");
+  var categorie = $firebaseArray(categoriaRef);
+
+  $log.debug("prodotti:"+prodotti);
+  $log.debug("section:"+categorie);
 
     //var prodotti =   JSON.parse($window.localStorage['magazzino']) || [];
     return {
@@ -58,6 +63,30 @@ angular.module("app")
          }
 
         }
-       }
+      },
+      getCategoria : function(){
+        return categorie;
+      },
+      aggiungiCategoria : function(categoria){
+        return categorie.$add(angular.copy(categoria));
+      },
+      cancellaCategoria : function(id){
+        $log.debug("id:"+id);
+        for (var key in categorie){
+         $log.debug("categorie id:"+categorie[key].id);
+         if(id==categorie[key].id){
+           categorie.$remove(categorie[key]);
+         }
+        }
+      },
+      getNameCategoria : function(id){
+        $log.debug("id:"+id);
+        for (var key in categorie){
+         $log.debug("categorie id:"+categorie[key].id);
+         if(id==categorie[key].id){
+           return categorie[key].titolo;
+         }
+        }
+      }
     };
 });

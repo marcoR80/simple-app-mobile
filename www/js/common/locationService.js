@@ -19,7 +19,15 @@ angular.module("app")
         "igienePers" : function(){
           $location.path('/igienePers');
         },
-
+        "nuovaCategoria" : function(){
+          $location.path('/create');
+        },
+        "categoria" : function(id){
+          $location.path('/categoria/'+id);
+        },
+        "goCancellaCategoria" : function(){
+          $location.path('/cancellaCategoria');
+        }
     };
 
 });

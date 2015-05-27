@@ -1,16 +1,18 @@
 html{
+  margin: 0;
   height: 100%;
+  background-color: #f1f8e9;
+  }
+body{
+  height: 100%;
+  background-color: #f1f8e9;
 }
 
-body{
-  background-color: #f1f8e9;
-  position: fixed;
-  height: 100%;
-}
 
 .ilike-blue-container {
     @extend .blue, .lighten-4;
     background: cornsilk;
+    height: 100%;
 }
 
 .title{

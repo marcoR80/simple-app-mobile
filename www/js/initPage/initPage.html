@@ -1,37 +1,25 @@
 <div class="ilike-blue-container">
   <div class="row">
     <div class="col s12 ">
-      <div class="card-panel teal lighten-2  white-text title">Magazzino</div>
+      <div class="card-panel panelTitle teal lighten-2  white-text title">DISPENSA</div>
     </div>
   </diV>
-  <div class="row">
-    <div class="col s12 ">
-      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="pageVini()">Vini</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s12 ">
-      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="pageBibite()">Bibite</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s12 ">
-      <button type="button" class="btn btn-default btn-lg btn-block" ng-click="pageAlimentari()">Alimentari</button>
-    </div>
-  </div>
-    <div class="row">
-    <div class="col s12 ">
-      <button type="button" class="btn btn-default btn-lg btn-block" ng-click="pageIgieneCasa()">Igiene Casa</button>
-    </div>
-  </div>
- <div class="row">
-  <div class="col s12 ">
-    <button type="button" class="btn btn-default btn-lg btn-block" ng-click="pageIgienePers()">Igiene Personale</button>
+  <ul class="table">
+     <li class="active" ng-repeat="item in getAllCategorie() track by $index">
+       <div class="row">
+         <div class="col s12 ">
+           <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="pageCategoria(item.id)">{{item.titolo}}</button>
+         </div>
+       </div>
+     </li>
+   </ul>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+      <i class="large mdi-editor-mode-edit"></i>
+    </a>
+    <ul>
+      <li><a ng-click="goCreaCategoria()" class="btn-floating red"><i class="large mdi-editor-insert-chart"></i></a></li>
+      <li><a ng-click="goCancellaCategoria()" class="btn-floating green"><i class="large mdi-editor-publish"></i></a></li>
+    </ul>
   </div>
 </div>
-  <div class="row">
-  <div class="col s3 offset-s9">
-  <a class="btn-floating btn-large waves-effect waves-light red"><i class="mdi-content-add"></i></a>
-</div>
-</div>
-  </div>

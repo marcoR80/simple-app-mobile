@@ -1,31 +1,27 @@
-angular.module("app").controller("InitPageCtrl", function($scope, $log, LocationService){
+angular.module("app").controller("InitPageCtrl", function($scope, $log, LocationService,MagazzinoService){
 
-$log.debug("init");
 
-window.localStorage['name'] = 'Max';
 
-var name = window.localStorage['name'] || 'you';
-
-$log.debug("name:"+name);
-
-$scope.pageVini = function(){
-  LocationService.vini();
+$scope.pageCategoria = function(id){
+  $log.debug("id"+id);
+  LocationService.categoria(id);
 };
 
-$scope.pageBibite = function(){
-  LocationService.bibite();
+$scope.goCreaCategoria = function(){
+  LocationService.nuovaCategoria();
 };
 
-$scope.pageAlimentari = function(){
-  LocationService.alimentari();
+$scope.getAllCategorie = function(){
+
+  var categorie = MagazzinoService.getCategoria();
+  $log.debug(categorie);
+  return categorie;
 };
 
-$scope.pageIgieneCasa = function(){
-  LocationService.igieneCasa();
+$scope.goCancellaCategoria = function(){
+  LocationService.goCancellaCategoria();
 };
 
-$scope.pageIgienePers = function(){
-  LocationService.igienePers();
-};
+
 
 });
