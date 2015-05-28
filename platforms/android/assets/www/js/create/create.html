@@ -1,0 +1,30 @@
+<div class="ilike-blue-container">
+  <div class="row">
+    <div class="col s12 ">
+      <div class="card-panel panelTitle teal lighten-2  white-text title">Nuova Categoria</div>
+    </div>
+  </diV>
+
+
+
+  <div class="row">
+
+  <form name="form">
+      <div class="input-field col s6">
+          <input ng-model="categoria.titolo" id="titolo" type="text" class="validate" required>
+          <label for="titolo">Titolo</label>
+      </div>
+    <div class="col s6">
+      <button type="submit" class="btn btn-default" ng-click="aggiungiCategoria(categoria)" ng-disabled="!form.$valid">ADD</button>
+    </div>
+  </form>
+</div>
+
+
+<div class="row">
+  <div class="col s12 ">
+   <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="home()">Home</button>
+ </div>
+ </div>
+
+</div>
