@@ -1,0 +1,28 @@
+<div class="ilike-blue-container">
+  <div class="row">
+    <div class="col s12 ">
+      <div class="card-panel teal lighten-2 white-text title">Elimina Categorie</div>
+    </div>
+  </diV>
+  <ul class="table">
+    <li class="active" ng-repeat="item in getCategoria() track by $index">
+      <div class="row">
+        <div class="col s6 ">
+          <span class="active text-center">
+            {{item.titolo}}
+          </span>
+        </div>
+        <div class="col s6 ">
+          <span class="active text-center">
+            <i class="btn btn-danger"  ng-click="cancellaCategoria(item.id)">-</i>
+          </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="col s12 ">
+      <button class="btn btn-primary btn-lg btn-block" ng-click="home()" type="button">Home</button>
+    </div>
+  </div>
+</div>

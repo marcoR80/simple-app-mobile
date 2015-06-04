@@ -1,0 +1,39 @@
+<div class="ilike-blue-container">
+  <div class="row">
+    <div class="col s12 ">
+      <div ng-show="!preload">
+      <div class="card-panel teal panelTitle lighten-2 white-text title">BENVENUTO</div>
+    </div>
+    <div ng-show="preload">
+      <div class="card-panel teal panelTitle lighten-2 white-text title">UN ATTIMO</div>
+    </div>
+    </div>
+  </div>
+  <div ng-show="!preload">
+    <div class="row">
+      <form name="form">
+        <div class="input-field col s4">
+          <input class="validate" id="user" ng-model="loginModel.email" required type="text">
+          <label for="name">User</label>
+        </div>
+        <div class="input-field col s4">
+          <input class="validate" id="pwd" ng-model="loginModel.password" required type="text">
+          <label for="quantita">Password</label>
+        </div>
+        <div class="col s4">
+          <button class="btn btn-default" ng-click="accedi(loginModel)"
+            ng-disabled="!form.$valid" type="submit">ACCEDI</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div ng-show="preload">
+    <div class="row">
+      <div class="col s12 ">
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
