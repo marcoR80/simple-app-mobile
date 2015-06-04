@@ -1,5 +1,5 @@
 angular.module("app")
-.factory("LocationService", function($location){
+.factory("LocationService", function($location, $log){
     return {
       "alimentari" : function(path) {
         $location.path('/alimentari');
@@ -27,6 +27,13 @@ angular.module("app")
         },
         "goCancellaCategoria" : function(){
           $location.path('/cancellaCategoria');
+        },
+        "errorPage" : function(){
+          $log.debug("error");
+          $location.path('/error');
+        },
+        "start" : function(){
+          $location.path('/home');
         }
     };
 

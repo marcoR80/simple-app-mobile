@@ -7,25 +7,17 @@ angular.module('app')
         templateUrl: rootPath + 'initPage/initPage.html',
         controller: 'InitPageCtrl'
     }).
-    when('/vini', {
-        templateUrl: rootPath + 'vini/vini.html',
-        controller: 'ViniCtrl'
+    when('/create', {
+        templateUrl: rootPath + 'create/create.html',
+        controller: 'CreateCtrl'
     }).
-    when('/alimentari', {
-        templateUrl: rootPath + 'alimentari/alimentari.html',
-        controller: 'AlimentariCtrl'
+    when('/categoria/:id', {
+        templateUrl: rootPath + 'categoria/categoria.html',
+        controller: 'CategoriaCtrl'
     }).
-    when('/igieneCasa', {
-        templateUrl: rootPath + 'igieneCasa/igieneCasa.html',
-        controller: 'IgieneCasaCtrl'
-    }).
-    when('/bibite', {
-        templateUrl: rootPath + 'bibite/bibite.html',
-        controller: 'BibiteCtrl'
-    }).
-    when('/igienePers', {
-        templateUrl: rootPath + 'igienePersonale/igienePersonale.html',
-        controller: 'IgienePersCtrl'
+    when('/cancellaCategoria', {
+        templateUrl: rootPath + 'cancellaCategoria/cancellaCategoria.html',
+        controller: 'CancellaCategoriaCtrl'
     }).
     otherwise({
       redirectTo: '/initPage'

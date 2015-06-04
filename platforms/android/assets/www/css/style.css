@@ -8,6 +8,10 @@ body{
   background-color: #f1f8e9;
 }
 
+.panelTitle{
+  @extend .card-panel;padding: 45px !important;
+}
+
 
 .ilike-blue-container {
     @extend .blue, .lighten-4;
