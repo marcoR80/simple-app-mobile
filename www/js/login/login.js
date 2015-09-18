@@ -9,7 +9,7 @@ $scope.logged=false;
 
 function autentica(loginModel){
   var deferred = $q.defer();
-  var ref = new Firebase("https://vivid-torch-1065.firebaseio.com/magazzino");
+  var ref = new Firebase();
   ref.authWithPassword({
     email: loginModel.email,
     password: loginModel.password
