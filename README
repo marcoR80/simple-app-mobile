@@ -1,8 +1,4 @@
 # Simple App Mobile
-<p align="center">
-<img src="https://cloud.githubusercontent.com/assets/82070/5554757/28bfa2a8-8c73-11e4-9433-bb814bd2bf11.png"/>
-</p>
-
 
 ### Compile
 eseguire il comando: phonegap compile android
