@@ -1,16 +1,8 @@
 angular.module("app")
-.factory("MagazzinoService", function($log, $window, $firebaseArray){
+.factory("MagazzinoService", function($log, $window, $firebaseArray, AuthService){
 
-  var ref = new Firebase("https://vivid-torch-1065.firebaseio.com/magazzino");
-  var prodotti = $firebaseArray(ref);
-
-
-  var categoriaRef = new Firebase("https://vivid-torch-1065.firebaseio.com/sezioni");
-  var categorie = $firebaseArray(categoriaRef);
-
-  $log.debug("prodotti:"+prodotti);
-  $log.debug("section:"+categorie);
-
+    var prodotti = AuthService.getProdotti();
+    var categorie = AuthService.getCategorie();
     //var prodotti =   JSON.parse($window.localStorage['magazzino']) || [];
     return {
         get : function(tipo){

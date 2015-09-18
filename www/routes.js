@@ -32,6 +32,6 @@ angular.module('app')
         controller: 'LoginCtrl'
     }).
     otherwise({
-      redirectTo: '/login'
+      redirectTo: '/initPage'
     });
 });

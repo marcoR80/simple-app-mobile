@@ -19,6 +19,18 @@ angular.module('app')
         templateUrl: rootPath + 'cancellaCategoria/cancellaCategoria.html',
         controller: 'CancellaCategoriaCtrl'
     }).
+    when('/error', {
+        templateUrl: rootPath + 'error/error.html',
+        controller: 'ErrorCtrl'
+    }).
+    when('/home', {
+        templateUrl: rootPath + 'home/home.html',
+        controller: 'HomeCtrl'
+    }).
+    when('/login', {
+        templateUrl: rootPath + 'login/login.html',
+        controller: 'LoginCtrl'
+    }).
     otherwise({
       redirectTo: '/initPage'
     });

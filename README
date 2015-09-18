@@ -1,0 +1,6 @@
+# per compilare
+phonegap compile android
+# per lanciare emulatore
+phonegap emulate.
+# per lanciare l applicazione
+http-server www

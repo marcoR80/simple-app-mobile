@@ -20,59 +20,229 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" href="vendor/angular-material/angular-material.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link type="text/css" rel="stylesheet" href="vendor/materialize/css/materialize.min.css"  media="screen,projection"/>
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <title>Magazzino</title>
-    </head>
-    <body>
-        <!--<div class="app">
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link rel="stylesheet" href="vendor/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="vendor/materialize/css/materialize.min.css" media="screen,projection" />
+
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <title>Magazzino</title>
+</head>
+
+<body>
+  <script type="text/javascript" charset="utf-8">
+
+     // Wait for Cordova to load
+     //
+     document.addEventListener("deviceready", onDeviceReady, false);
+
+     // Cordova is ready
+     //
+     function onDeviceReady() {
+         navigator.splashscreen.show();
+     }
+
+     </script>
+  <!--<div class="app">
             <h1>Magazzino</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
         </div>-->
-        <!-- AngularJS -->
+  <!-- AngularJS -->
 
 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="vendor/angular-1.3.9/angular.min.js"></script>
-        <script src="vendor/angular-1.3.9/angular-route.min.js"></script>
-        <script src="vendor/angular-animate/angular-animate.min.js"></script>
-        <script src="vendor/angular-aria/angular-aria.min.js"></script>
-        <script src="vendor/angular-material/angular-material.js"></script>
-        <script type="text/javascript" src="vendor/materialize/js/materialize.min.js"></script>
-        <!-- Firebase -->
-        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="vendor/angular-1.3.9/angular.min.js"></script>
+  <script src="vendor/angular-1.3.9/angular-route.min.js"></script>
+  <script src="vendor/angular-animate/angular-animate.min.js"></script>
+  <script src="vendor/angular-aria/angular-aria.min.js"></script>
+  <script src="vendor/angular-material/angular-material.js"></script>
+  <!--<script src="vendor/push-notification/PushNotification.js"></script>-->
+  <script type="text/javascript" src="vendor/materialize/js/materialize.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 
-        <!-- AngularFire -->
-        <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
 
-        <script src="app.js"></script>
-        <script src="routes.js"></script>
-        <script src="js/initPage/initPage.js"></script>
-        <script src="js/create/create.js"></script>
-        <script src="js/categoria/categoria.js"></script>
-        <script src="js/cancellaCategoria/cancellaCategoria.js"></script>
-        <script src="js/common/locationService.js"></script>
-        <script src="js/common/magazzinoService.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-        <div ng-app="app" style="height: 100%;">
-          <div ng-view style="height: 100%;"></div>
-        </div>
-    </body>
+
+  <script src="app.js"></script>
+  <script src="routes.js"></script>
+  <script src="js/initPage/initPage.js"></script>
+  <script src="js/create/create.js"></script>
+  <script src="js/categoria/categoria.js"></script>
+  <script src="js/cancellaCategoria/cancellaCategoria.js"></script>
+  <script src="js/common/locationService.js"></script>
+  <script src="js/common/magazzinoService.js"></script>
+  <script src="js/common/authService.js"></script>
+  <script src="js/error/error.js"></script>
+  <script src="js/home/home.js"></script>
+  <script src="js/login/login.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript">
+    app.initialize();
+  </script>
+  <div ng-app="app" style="height: 100%;">
+    <div ng-view style="height: 100%;"></div>
+  </div>
+</body>
+<!--
+<script type="text/javascript">
+  var pushNotification;
+
+  try {
+    pushNotification = window.plugins.pushNotification;
+    $("#app-status-ul").append('<li>registering android </li>');
+    pushNotification.register(successHandler, errorHandler, {
+        "senderID": "994480372657",
+        "ecb": "onNotification"
+      }); // required!
+  } catch (err) {
+    txt = "There was an error on this page.\n\n";
+    txt += "Error description: " + err.message + "\n\n";
+    alert(txt);
+  }
+
+
+  function onDeviceReady() {
+    $("#app-status-ul").append('<li>deviceready event received</li>');
+
+    document.addEventListener("backbutton", function(e) {
+      $("#app-status-ul").append('<li>backbutton event received</li>');
+
+      if ($("#home").length > 0) {
+        // call this to get a new token each time. don't call it to reuse existing token.
+        //pushNotification.unregister(successHandler, errorHandler);
+        e.preventDefault();
+        navigator.app.exitApp();
+      } else {
+        navigator.app.backHistory();
+      }
+    }, false);
+
+    try {
+      pushNotification = window.plugins.pushNotification;
+      $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
+      if (device.platform == 'android' || device.platform == 'Android' ||
+        device.platform == 'amazon-fireos') {
+        pushNotification.register(successHandler, errorHandler, {
+          "senderID": "994480372657",
+          "ecb": "onNotification"
+        }); // required!
+      } else {
+        pushNotification.register(tokenHandler, errorHandler, {
+          "badge": "true",
+          "sound": "true",
+          "alert": "true",
+          "ecb": "onNotificationAPN"
+        }); // required!
+      }
+    } catch (err) {
+      txt = "There was an error on this page.\n\n";
+      txt += "Error description: " + err.message + "\n\n";
+      alert(txt);
+    }
+  }
+
+  // handle APNS notifications for iOS
+  function onNotificationAPN(e) {
+    if (e.alert) {
+      $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
+      // showing an alert also requires the org.apache.cordova.dialogs plugin
+      navigator.notification.alert(e.alert);
+    }
+
+    if (e.sound) {
+      // playing a sound also requires the org.apache.cordova.media plugin
+      var snd = new Media(e.sound);
+      snd.play();
+    }
+
+    if (e.badge) {
+      pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+    }
+  }
+
+  // handle GCM notifications for Android
+  function onNotification(e) {
+    $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+
+    switch (e.event) {
+      case 'registered':
+        if (e.regid.length > 0) {
+          $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+          // Your GCM push server needs to know the regID before it can push to this device
+          // here is where you might want to send it the regID for later use.
+          console.log("regID = " + e.regid);
+        }
+        break;
+
+      case 'message':
+        // if this flag is set, this notification happened while we were in the foreground.
+        // you might want to play a sound to get the user's attention, throw up a dialog, etc.
+        if (e.foreground) {
+          $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+
+          // on Android soundname is outside the payload.
+          // On Amazon FireOS all custom attributes are contained within payload
+          var soundfile = e.soundname || e.payload.sound;
+          // if the notification contains a soundname, play it.
+          // playing a sound also requires the org.apache.cordova.media plugin
+          var my_media = new Media("/android_asset/www/" + soundfile);
+
+          my_media.play();
+        } else { // otherwise we were launched because the user touched a notification in the notification tray.
+          if (e.coldstart)
+            $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+          else
+            $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+        }
+
+        $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+        //android only
+        $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+        //amazon-fireos only
+        $("#app-status-ul").append('<li>MESSAGE -> TIMESTAMP: ' + e.payload.timeStamp + '</li>');
+        break;
+
+      case 'error':
+        $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+        break;
+
+      default:
+        $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+        break;
+    }
+  }
+
+  function tokenHandler(result) {
+    $("#app-status-ul").append('<li>token: ' + result + '</li>');
+    // Your iOS push server needs to know the token before it can push to this device
+    // here is where you might want to send it the token for later use.
+  }
+
+  function successHandler(result) {
+    $("#app-status-ul").append('<li>success:' + result + '</li>');
+  }
+
+  function errorHandler(error) {
+    $("#app-status-ul").append('<li>error:' + error + '</li>');
+  }
+
+  document.addEventListener('deviceready', onDeviceReady, true);
+</script>-->
+
+
+
 </html>
